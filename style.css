@@ -246,7 +246,6 @@ footer p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     animation: slideIn 1s ease forwards;
     box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
-
 }
 
 /* Correction de l'espacement */
@@ -298,3 +297,103 @@ header {
 .version-badge:hover {
     opacity: 0.8;
 }
+
+/* En-tête (Header) amélioré pour mobile */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(20, 20, 40, 0.9);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-family: 'Anton', sans-serif;
+    color: #00ccff;
+    text-shadow: 0 0 8px #00ccff, 0 0 12px #00ccff;
+}
+
+/* Menu de navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ccff;
+    text-shadow: 0 0 5px #00ccff;
+}
+
+/* Barre de recherche */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-bar input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #0f0f1f;
+    color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ccff;
+}
+
+/* Mobile-friendly header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+}
+
