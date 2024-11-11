@@ -366,7 +366,6 @@ nav ul li a:hover {
     outline: none;
     box-shadow: 0 0 10px #00ccff;
 }
-
 /* Mobile-friendly header */
 @media (max-width: 768px) {
     header {
