@@ -415,3 +415,40 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Style général pour le logo */
+.logo {
+    font-size: 2rem; /* Taille par défaut */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* Image dans la section hero */
+.hero img {
+    max-width: 100%; /* S'assure que l'image ne dépasse pas sa conteneur */
+    height: auto;
+}
+
+/* Responsivité pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem; /* Réduction de la taille du logo */
+    }
+
+    .hero img {
+        width: 80%; /* Réduction de la taille de l'image pour les téléphones */
+        margin: 0 auto; /* Centrer l'image */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem; /* Taille encore plus petite pour très petits écrans */
+    }
+
+    .hero img {
+        width: 70%; /* Réduction supplémentaire pour les téléphones */
+    }
+}
+
