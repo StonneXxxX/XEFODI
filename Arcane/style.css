@@ -1,0 +1,417 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(20, 20, 40, 0.9);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-family: 'Anton', sans-serif;
+    color: #00ccff;
+    text-shadow: 0 0 8px #00ccff, 0 0 12px #00ccff;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: 'Anton', sans-serif;
+}
+
+nav ul li a:hover {
+    color: #00ccff;
+    text-shadow: 0 0 5px #00ccff;
+}
+
+/* Barre de recherche */
+.search-bar input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #0f0f1f;
+    color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ccff;
+}
+
+/* Section Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background: url('image/fond.png') no-repeat center center / cover;
+    position: relative;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero .overlay {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-family: 'Anton', sans-serif;
+    color: #ffe600;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 20px;
+    background: #00ccff;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+    font-family: 'Anton', sans-serif;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ccff, 0 0 30px #00ccff;
+}
+
+/* Grille des films */
+.film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.film {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.film:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ccff, 0 0 15px #00ccff;
+}
+
+.film img {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid white;
+}
+
+.film-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.film-info h3 {
+    font-size: 1.4rem;
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+.film-info p {
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+/* Badge "New" */
+.film.new::before {
+    content: "Nouveau";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff004c;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
+}
+
+/* Footer */
+footer {
+    background: rgba(20, 20, 40, 0.9);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+footer p {
+    color: #ffe600;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .film-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .film-info h3 {
+        font-size: 1rem;
+    }
+}
+/* Bannière d'annonce */
+.announcement-banner {
+    background: #ff0000;
+    color: #c7c7c7;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Anton', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1s ease forwards;
+    box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
+}
+
+/* Correction de l'espacement */
+header {
+    margin-top: 0; /* Réinitialiser la marge supérieure */
+    padding-top: 60px; /* Assure que le header ne se chevauche pas avec la bannière */
+    z-index: 1000; /* Sous la bannière */
+}
+
+/* Animation de glissement de la bannière */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustement pour petits écrans */
+@media (max-width: 768px) {
+    .announcement-banner {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    header {
+        padding-top: 70px; /* Ajuster le padding-top pour petits écrans */
+    }
+}
+
+/* Badge de version */
+.version-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 153, 255, 0.219); /* Fond semi-transparent */
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 4px 8px rgb(0, 81, 255);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.version-badge:hover {
+    opacity: 0.8;
+}
+
+/* En-tête (Header) amélioré pour mobile */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(20, 20, 40, 0.9);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-family: 'Anton', sans-serif;
+    color: #00ccff;
+    text-shadow: 0 0 8px #00ccff, 0 0 12px #00ccff;
+}
+
+/* Menu de navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ccff;
+    text-shadow: 0 0 5px #00ccff;
+}
+
+/* Barre de recherche */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-bar input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #0f0f1f;
+    color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ccff;
+}
+
+/* Mobile-friendly header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+}
+
+.filter-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.filter-container label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#seasonFilter {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
