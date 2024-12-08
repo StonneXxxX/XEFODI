@@ -188,6 +188,21 @@ nav ul li a:hover {
     box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
 }
 
+/* Badge "cal" */
+.film.cal::before {
+    content: "Cal.. de l'Avent 2024";
+    position: absolute;
+    top: 270px;
+    left: 10px;
+    background: #ff004c;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
+}
+
 /* Footer */
 footer {
     background: rgba(20, 20, 40, 0.9);
@@ -366,6 +381,7 @@ nav ul li a:hover {
     outline: none;
     box-shadow: 0 0 10px #00ccff;
 }
+
 /* Mobile-friendly header */
 @media (max-width: 768px) {
     header {
