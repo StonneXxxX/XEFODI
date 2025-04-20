@@ -1,228 +1,428 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XEFODI - Films Populaires</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="image/minilogo.png" type="minilogo/png">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Bannière d'annonce -->
-    <div class="announcement-banner">
-        <a>🎇Bonne année a vous touse ! 🍾</a>
-     </div>
-    <!-- Header avec logo, menu de navigation et barre de recherche -->
-    <header>
-        <img src="logo.png" alt="logo ">
-        <nav>
-            <ul>
-                <li><a href="Accueil/index.html">Accueil</a></li>
-                <li><a href="#">Films</a></li>
-            </ul>
-        </nav>
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Chercher un film...">
-        </div>
-    </header>
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Section Hero avec un message promotionnel -->
-    <section class="hero">
-        <div class="overlay">
-            <h1>Explorez les meilleurs films 🎥</h1>
-            <p>Découvrez des films populaires et des nouveautés chaque jour.</p>
-            <a href="#" class="btn">Explorer maintenant</a>
-        </div>
-    </section>
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-    <!-- Section principale avec la grille de films -->
-    <main>
-        <section class="film-grid" id="filmGrid">
-            <!-- Film avec le badge "New" -->
-            <article class="film cal" data-title="avatar2" data-url="Squid Game\index.html">
-                <img src="image/squidgame.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Squid Game <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024).</p>
-                </div>
-            </article>
-            <article class="film cal" data-title="avatar2" data-url="avatar2\index.html">
-                <img src="image/Beast-Games.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Beast Games <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024).</p>
-                </div>
-            </article>
-            <article class="film cal" data-title="arcane" data-url="Arcane\index.html">
-                <img src="image/Arcane.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>ARCANE  <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2021 - 2024).</p>
-                </div>
-            </article>
-            
-            <article class="film cal" data-title="avatar2" data-url="oppen\index.html">
-                <img src="image/oppen.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Oppenheimer  <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2023).</p>
-                </div>
-            </article>
-            
-            <article class="film cal" data-title="avatar2" data-url="\avatar2\index.html">
-                <img src="image/avatar 2.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Avatar : La voie de l'eau  <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2023).</p>
-                </div>
-            </article>
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(20, 20, 40, 0.9);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
 
-            <article class="film cal" data-title="Joker Folie à deux" data-url="3jmax\index.html">
-                <img src="image/3jmax.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>3 Jour Max  <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024).</p>
-                </div>
-            </article>
-            
-            <article class="film cal" data-title="Joker Folie à deux" data-url="themarvel\index.html">
-                <img src="image/themarvel.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>The Marvel  <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024).</p>
-                </div>
-            </article>
-            
-            <article class="film cal" data-title="Joker Folie à deux" data-url="smile2\index.html">
-                <img src="image/smile2.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Smile 2  <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024).</p>
-                </div>
-            </article>
-            
-            <article class="film cal" data-title="Joker Folie à deux" data-url="ChasseG\index.html">
-                <img src="image/ChasseG.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Chasse Gardée  <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024).</p>
-                </div>
-            </article>
+.logo {
+    font-size: 2.5rem;
+    font-family: 'Anton', sans-serif;
+    color: #00ccff;
+    text-shadow: 0 0 8px #00ccff, 0 0 12px #00ccff;
+}
 
-            <article class="film cal" data-title="Joker Folie à deux" data-url="superpapa\index.html">
-                <img src="image/superpapa.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Super Papa  <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024).</p>
-                </div>
-            </article>
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
 
-            <article class="film cal" data-title="Joker Folie à deux" data-url="Dear Santa\index.html">
-                <img src="image/Dear Santa.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Dear Santa  <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024).</p>
-                </div>
-            </article>
+nav ul li a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: 'Anton', sans-serif;
+}
 
-            <article class="film cal" data-title="fat" data-url="fastandfurioussaga\index.html">
-                <img src="image/fat.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Fast And Furious SAGA <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024).</p>
-                </div>
-            </article>
+nav ul li a:hover {
+    color: #00ccff;
+    text-shadow: 0 0 5px #00ccff;
+}
 
-            <article class="film" data-title="Joker" data-url="Joker\index.html">
-                <img src="image/joker.jpg" alt="Affiche du film joker">
-                <div class="film-info">
-                    <h3>Joker <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2018)</p>
-                </div>
-            </article>
+/* Barre de recherche */
+.search-bar input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #0f0f1f;
+    color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
 
-            <article class="film" data-title="Joker Folie à deux" data-url="Joker  Folie à deux\index.html">
-                <img src="image/jokerfolieàdeux.jpg" alt="Affiche du film jokerfolieàdeux">
-                <div class="film-info">
-                    <h3>Joker : Folie à deux <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024)</p>
-                </div>
-            </article>
-            
-            <article class="film" data-title="loup garous" data-url="Un p'tit truc en plus\index.html">
-                <img src="image/Unptittrucenplus.jpg" alt="Affiche du film Unptittrucenplus.jpg">
-                <div class="film-info">
-                    <h3>Un p'tit truc en plus <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024)</p>
-                </div>
-            </article>
-            
-            <article class="film" data-title="lecomtedemontecristo" data-url="lecomtedemontecristo\index.html">
-                <img src="image/lecomtedemontecristo.jpg" alt="Affiche du film lecomtedemontecristo">
-                <div class="film-info">
-                    <h3>Le Comte de Monte-Cristo <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024)</p>
-                </div>
-            </article>
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ccff;
+}
 
-            <article class="film" data-title="loup garous" data-url="loupsgarous\index.html">
-                <img src="image/loupsgarous.jpg" alt="Affiche du film Loups-Garous">
-                <div class="film-info">
-                    <h3>Loups-Garous <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024)</p>
-                </div>
-            </article>
+/* Section Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background: url('image/fond.png') no-repeat center center / cover;
+    position: relative;
+    text-align: center;
+}
 
-            <article class="film" data-title="Deadpool & Wolverine" data-url="deadpool&wolverine\deadpool&wolverine.html">
-                <img src="image/detw.jpg" alt="Affiche du film Deadpool & Wolverine">
-                <div class="film-info">
-                    <h3>Deadpool & Wolverine (2024) <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024)</p>
-                </div>
-            </article>
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
 
-            <article class="film" data-title="Le Robot Sauvage" data-url="lerobotsauvage\index.html">
-                <img src="image/robosauvage.jpg" alt="Affiche du film Le Robot Sauvage">
-                <div class="film-info">
-                    <h3>Le Robot Sauvage <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2024)</p>
-                </div>
-            </article>
+.hero .overlay {
+    position: relative;
+    z-index: 1;
+}
 
-            <article class="film" data-title="Terrifier 2" data-url="Terrifier2\index.html">
-                <img src="image/Terrifier2.jpg" alt="Affiche du film Terrifier2">
-                <div class="film-info">
-                    <h3>Terrifier 2 <font color="#3b3021"><i>HD</i></font></h3>
-                    <p>(2022)</p>
-                </div>
-            </article>
-        </section>
-    </main>
+.hero h1 {
+    font-size: 4rem;
+    font-family: 'Anton', sans-serif;
+    color: #ffe600;
+}
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 - 2025 XEFODI site by Ch.M. Tous droits réservés.</p>
-    </footer>
+.hero p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
 
-    <!-- Fichier JavaScript -->
-    <script src="script.js"></script>
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 20px;
+    background: #00ccff;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+    font-family: 'Anton', sans-serif;
+}
 
-    <!-- Script pour rendre les articles cliquables -->
-    <script>
-        document.querySelectorAll('.film').forEach(article => {
-            article.addEventListener('click', () => {
-                const url = article.getAttribute('data-url');
-                if (url) {
-                    window.location.href = url;
-                } else {
-                    alert("URL non disponible pour ce film.");
-                }
-            });
-        });
-    </script>
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ccff, 0 0 30px #00ccff;
+}
 
-    <!-- Badge de version -->
-    <div class="version-badge">v25.0.0</div>
-</body>
-</html>
+/* Grille des films */
+.film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.film {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.film:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ccff, 0 0 15px #00ccff;
+}
+
+.film img {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid white;
+}
+
+.film-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.film-info h3 {
+    font-size: 1.4rem;
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+.film-info p {
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+/* Badge "New" */
+.film.new::before {
+    content: "Nouveau";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff004c;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
+}
+
+/* Badge "indispo" */
+.film.indisponible::before {
+    content: "indisponible";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ff004c;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
+}
+
+/* Badge "cal" */
+.film.cal::before {
+    content: "Cal.. de l'Avent 2024";
+    position: absolute;
+    top: 270px;
+    left: 10px;
+    background: #ff004c;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
+}
+
+/* Footer */
+footer {
+    background: rgba(20, 20, 40, 0.9);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+footer p {
+    color: #ffe600;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .film-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .film-info h3 {
+        font-size: 1rem;
+    }
+}
+/* Bannière d'annonce */
+.announcement-banner {
+    background: #ff0000;
+    color: #c7c7c7;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Anton', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1s ease forwards;
+    box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
+}
+
+/* Correction de l'espacement */
+header {
+    margin-top: 0; /* Réinitialiser la marge supérieure */
+    padding-top: 60px; /* Assure que le header ne se chevauche pas avec la bannière */
+    z-index: 1000; /* Sous la bannière */
+}
+
+/* Animation de glissement de la bannière */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustement pour petits écrans */
+@media (max-width: 768px) {
+    .announcement-banner {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    header {
+        padding-top: 70px; /* Ajuster le padding-top pour petits écrans */
+    }
+}
+
+/* Badge de version */
+.version-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 153, 255, 0.219); /* Fond semi-transparent */
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 4px 8px rgb(0, 81, 255);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.version-badge:hover {
+    opacity: 0.8;
+}
+
+/* En-tête (Header) amélioré pour mobile */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(20, 20, 40, 0.9);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-family: 'Anton', sans-serif;
+    color: #00ccff;
+    text-shadow: 0 0 8px #00ccff, 0 0 12px #00ccff;
+}
+
+/* Menu de navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ccff;
+    text-shadow: 0 0 5px #00ccff;
+}
+
+/* Barre de recherche */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-bar input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #0f0f1f;
+    color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ccff;
+}
+
+/* Mobile-friendly header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+}
