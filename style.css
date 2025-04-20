@@ -188,6 +188,21 @@ nav ul li a:hover {
     box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
 }
 
+/* Badge "indispo" */
+.film.indisponible::before {
+    content: "indisponible";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ff004c;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff0000, 0 0 10px #ff0000;
+}
+
 /* Badge "cal" */
 .film.cal::before {
     content: "Cal.. de l'Avent 2024";
